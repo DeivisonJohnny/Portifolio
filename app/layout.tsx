@@ -18,7 +18,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} dark`}
+      style={{backgroundColor: '#0f0715'}} 
+      className={`${inter.className}  dark flex items-center flex-col relative custom-background backdrop-blur-sm`}
       >
         {children}
       </body>
