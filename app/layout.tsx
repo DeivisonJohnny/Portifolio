@@ -19,8 +19,8 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body
       style={{backgroundColor: '#0f0715'}} 
-      className={`${sora.className}  dark flex items-center flex-col relative custom-background backdrop-blur-sm overflow-x-hidden scroll-smooth`}
-      >
+      className={`${sora.className} dark flex items-center flex-col relative custom-background backdrop-blur-sm overflow-x-hidden scroll-smooth`}
+            >
         {children}
       </body>
     </html>

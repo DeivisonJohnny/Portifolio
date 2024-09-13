@@ -31,10 +31,9 @@ export default function Header() {
   return (
     <header className="flex justify-between p-5 w-full">
       <h1 className="text-2xl font-semibold w-[195px]">
-        {" "}
-        &lt; Dev Johnny /&gt;{" "}
+        &lt; Dev Johnny /&gt;
       </h1>
-      <div className="flex w-[70%] justify-end gap-6">
+      <div className="flex w-[70%] justify-end gap-6 max-lg:w-fit">
         {isLargeScreen ? (
           <>
             <NavLink href="#projetos">Projetos</NavLink>
@@ -50,7 +49,7 @@ export default function Header() {
           </>
         ) : (
           <DropdownMenu>
-            <DropdownMenuTrigger>
+            <DropdownMenuTrigger style={{ border: "none", outline: 0 }}>
               <MenuOutlined style={{ fontSize: 20, width: 40 }} />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
