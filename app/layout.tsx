@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import {Inter} from 'next/font/google'
+import {Sora} from 'next/font/google'
 
-const inter = Inter({subsets: ['latin']})
+const sora = Sora({subsets: ['latin']})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,10 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body
       style={{backgroundColor: '#0f0715'}} 
-      className={`${inter.className}  dark flex items-center flex-col relative custom-background backdrop-blur-sm`}
+      className={`${sora.className}  dark flex items-center flex-col relative custom-background backdrop-blur-sm overflow-x-hidden scroll-smooth`}
       >
         {children}
       </body>

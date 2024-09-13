@@ -33,26 +33,53 @@
 
     --radius: 0.5rem;
   }
+
+  
   .custom-background::before {
     content: "";
     position: absolute;
-    top: 0;
-    right: 0;
     width: 372px;
     height: 358px;
     border-radius: 50%;
-    background: var(--tj-theme-primary);
-    background: -o-linear-gradient(190deg, #8750f7 0%, rgba(115, 67, 210, 0) 100%);
-    background: linear-gradient(260deg, #8750f7 0%, rgba(115, 67, 210, 0) 100%);
+    background: #8750f7;
+    background: -o-linear-gradient(
+      190deg,
+      #8750f7 0%,
+      rgba(115, 67, 210, 0) 100%
+    );
+    background: linear-gradient(260deg, #8850f7b0 0%, rgba(115, 67, 210, 0) 100%);
     -webkit-filter: blur(150px);
     filter: blur(150px);
     margin-right: -5%;
     margin-top: -5%;
     z-index: -1;
+    top: var(--bg-top, 0);
+    right: var(--bg-right, 0);
+  }
+  
+  .custom-background-top-right {
+    --bg-top: 0;
+    --bg-right: 0;
+  }
+  
+  .custom-background-bottom-left {
+    --bg-top: 90%;
+    --bg-right: 0%;
+    bottom: 40%;
+    left: 50%;
+  }
+  
+  .gradient-text {
+    background-clip: text;
+    background: linear-gradient(
+      to right,
+      #8750f7 0%,
+      white 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
-
-
 
 @layer base {
   * {
