@@ -3,38 +3,42 @@
 @tailwind utilities;
 
 @layer base {
+  /* Theme colors for dark mode */
   .dark {
     --foreground: 210 40% 98%;
-
     --card: 228 9% 11%;
     --card-foreground: 210 40% 98%;
-
     --popover: 228 9% 11%;
     --popover-foreground: 210 40% 98%;
-
     --primary: 252 100% 69%;
     --primary-foreground: 0 0% 100%;
-
     --secondary: 228 6% 16%;
     --secondary-foreground: 210 40% 98%;
-
     --muted: 228 6% 16%;
     --muted-foreground: 215 20.2% 65.1%;
-
     --accent: 228 6% 16%;
     --accent-foreground: 210 40% 98%;
-
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 228 6% 16%;
     --input: 228 6% 16%;
     --ring: 212.7 26.8% 83.9%;
-
     --radius: 0.5rem;
   }
 
-  
+  /* Root variables */
+  :root {
+    --tj-theme-primary: #8750f7; /* Substitua pela sua cor primária */
+    --tj-theme-secondary: #2a1454; /* Substitua pela sua cor secundária */
+  }
+
+  /* Hover effect for item-list-quality */
+  .item-list-quality:hover ~ .icon-list-quality {
+    transition: all 400ms;
+    transform: rotate(-30%);
+  }
+
+  /* Custom background styles */
   .custom-background::before {
     content: "";
     position: absolute;
@@ -42,11 +46,7 @@
     height: 358px;
     border-radius: 50%;
     background: #8750f7;
-    background: -o-linear-gradient(
-      190deg,
-      #8750f7 0%,
-      rgba(115, 67, 210, 0) 100%
-    );
+    background: -o-linear-gradient(190deg, #8750f7 0%, rgba(115, 67, 210, 0) 100%);
     background: linear-gradient(260deg, #8850f7b0 0%, rgba(115, 67, 210, 0) 100%);
     -webkit-filter: blur(150px);
     filter: blur(150px);
@@ -56,65 +56,61 @@
     top: var(--bg-top, 0);
     right: var(--bg-right, 0);
   }
-  
+
   .custom-background-top-right {
     --bg-top: 0;
     --bg-right: 0;
   }
-  
+
   .custom-background-bottom-left {
     --bg-top: 90%;
     --bg-right: 0%;
     bottom: 40%;
     left: 50%;
   }
-  
+
+
+  .scrollSuave {
+
+    scroll-behavior: smooth;
+
+  }
+
+  /* Gradient text effect */
   .gradient-text {
     background-clip: text;
-    background: linear-gradient(
-      to right,
-      #8750f7 0%,
-      white 100%
-    );
+    background: linear-gradient(to right, #8750f7 0%, white 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
-/* globals.css */
+  /* Global styles */
+  body {
+    background-color: #0f0715;
+  }
 
-:root {
-  --tj-theme-primary: #8750f7; /* Substitua pela sua cor primária */
-  --tj-theme-secondary: #2a1454; /* Substitua pela sua cor secundária */
-}
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
 
-body {
-  background-color: #0f0715;
-}
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--tj-theme-primary);
+  }
 
-::-webkit-scrollbar {
-  width: 5px;
-}
+  ::-webkit-scrollbar-track {
+    background-color: var(--tj-theme-secondary);
+  }
 
-::-webkit-scrollbar-thumb {
-  background-color: var(--tj-theme-primary);
-}
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--tj-theme-primary) var(--tj-theme-secondary);
+  }
 
-::-webkit-scrollbar-track {
-  background-color: var(--tj-theme-secondary);
-}
-
-html {
-  scrollbar-width: thin;
-  scrollbar-color: var(--tj-theme-primary) var(--tj-theme-secondary);
-}
-
-
-}
-
-@layer base {
+  /* Tailwind base styles */
   * {
     @apply border-border;
   }
+  
   body {
     @apply bg-background text-foreground antialiased;
   }

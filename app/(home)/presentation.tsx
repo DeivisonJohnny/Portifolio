@@ -8,7 +8,7 @@ import {
 
 export default function Presentation() {
   return (
-    <section className="  relative transition duration-100 ease-in-out  flex justify-around flex-col px-3 w-[100%] h-[90vh] max-lg:h-[100%] ">
+    <section className="  relative transition duration-100 ease-in-out  flex justify-around flex-col px-3 py-10 w-[100%] h-[90vh] max-lg:h-[100%]  2xl:w-[1500px] ">
       <div className=" h-[100%] w-[100%] flex items-center justify-between max-lg:flex-col ">
         <div className="flex flex-col  justify-center gap-4 leading-tight w-[50%] h-[100%] px-4 max-lg:w-[100%] ">
           <h1 className="text-3xl font-bold">Eu sou Johnny</h1>
@@ -41,7 +41,7 @@ export default function Presentation() {
           <div className="w-[55%] flex items-center justify-center rounded-[21px] relative border-[2px] border-[#2a1454] rounded-custom transition-all duration-300 rotate-[4.5deg] hover:rotate-0 hover:border-[#8750f7] max-lg:w-[40%] m-9">
             <Image
               className="filter grayscale rounded-[20px]"
-              src={require("../../public/img/eu.jpg")}
+              src={require("./../public/img/eu.jpg")}
               alt="Minha foto"
               width={1000}
               height={1000}
