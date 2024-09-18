@@ -41,7 +41,7 @@ export default function Presentation() {
           <div className="w-[55%] flex items-center justify-center rounded-[21px] relative border-[2px] border-[#2a1454] rounded-custom transition-all duration-300 rotate-[4.5deg] hover:rotate-0 hover:border-[#8750f7] max-lg:w-[40%] m-9">
             <Image
               className="filter grayscale rounded-[20px]"
-              src={require("./../public/img/eu.jpg")}
+              src={require("../../public/img/eu.jpg")}
               alt="Minha foto"
               width={1000}
               height={1000}

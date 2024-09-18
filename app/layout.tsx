@@ -17,12 +17,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      
+      
       <body
+      
       style={{backgroundColor: '#0f0715', height: '100%', scrollBehavior: "smooth"}} 
       className={`${sora.className} dark flex items-center flex-col relative custom-background backdrop-blur-sm overflow-x-hidden scrollSuave`}
             >
         {children}
       </body>
+      
     </html>
   );
 }

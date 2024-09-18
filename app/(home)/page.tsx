@@ -4,6 +4,7 @@ import Presentation from "./components/presentation";
 // import MyQuality from "./my-quality";
 import Contributions from "./components/my-contributions/contributions";
 import MyQuality from "./components/my-quality/my-quality";
+import MyExperience from "./components/my-experience/experience";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Presentation></Presentation>
         <MyQuality></MyQuality>
         <Contributions></Contributions>
+        <MyExperience></MyExperience>
       </main>
     </div>
   );

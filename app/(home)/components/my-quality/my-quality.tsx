@@ -1,4 +1,4 @@
-import MyQualityItem from "./components/my-quality/my-quality-item";
+import MyQualityItem from "./my-quality-item";
 
 function MyQuality() {
   return (
