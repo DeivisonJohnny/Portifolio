@@ -1,8 +1,9 @@
 import * as React from "react";
 import Header from "./components/header/header";
-import Presentation from "./presentation";
-import MyQuality from "./my-quality";
-import Contributions from "./contributions";
+import Presentation from "./components/presentation";
+// import MyQuality from "./my-quality";
+import Contributions from "./components/my-contributions/contributions";
+import MyQuality from "./components/my-quality/my-quality";
 
 export default function Home() {
   return (

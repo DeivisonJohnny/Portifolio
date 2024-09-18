@@ -1,4 +1,4 @@
-import CardJobs from "./components/my-contributions/card-jobs";
+import CardJobs from "./card-jobs";
 
 export default function Contributions() {
   return (
