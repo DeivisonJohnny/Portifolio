@@ -33,10 +33,8 @@ export default function CardJobs(props: CardJobs) {
       <CardContent className=" flex items-center justify-center h-[400px] py-4 ">
         <Image
           className=" w-[80%] "
-          src={require(`../../../public/img/${props.nameImg}`)}
+          src={`/${props.nameImg}`}
           alt={"Imagem dos card"}
-          objectFit="cover"
-          layout="raw"
           width={500}
           height={500}
         ></Image>
