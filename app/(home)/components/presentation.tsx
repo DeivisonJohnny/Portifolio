@@ -26,13 +26,13 @@ export default function Presentation() {
             <button className=" p-3 px-5 transition duration-300 bg-[#8850f700] rounded-3xl border-[1px] border-[#8750f7] text-[13px] font-medium text-[#8750f7]  hover:bg-[#8750f7] hover:text-[white] ">
               Download CV
             </button>
-            <button className=" relative transition duration-300 transform translate-y-0 hover:translate-y-[-10px] ">
+            <button className=" relative transition duration-300 transform translate-y-0 hover:translate-y-[-10px] filter drop-shadow-shadow-icon hover:drop-shadow-shadow-icon-from">
               <GithubFilled style={{ color: "#8750f7", fontSize: 25 }} />
             </button>
-            <button className=" relative transition duration-300 transform translate-y-0 hover:translate-y-[-10px] ">
+            <button className=" relative transition duration-300 transform translate-y-0 hover:translate-y-[-10px] filter drop-shadow-shadow-icon hover:drop-shadow-shadow-icon-from">
               <LinkedinFilled style={{ color: "#8750f7", fontSize: 25 }} />
             </button>
-            <button className=" relative transition duration-300 transform translate-y-0 hover:translate-y-[-10px] ">
+            <button className=" relative transition duration-300 transform translate-y-0 hover:translate-y-[-10px] filter drop-shadow-shadow-icon hover:drop-shadow-shadow-icon-from">
               <InstagramOutlined style={{ color: "#8750f7", fontSize: 25 }} />
             </button>
           </div>
@@ -47,18 +47,27 @@ export default function Presentation() {
               height={1000}
             ></Image>
           </div>
-          <div className=" w-[80%] hidden  items-center justify-evenly gap-5  max-lg:flex  ">
+          <div className=" w-[80%] hidden  items-center justify-evenly gap-5  max-lg:flex  iconShadowHome ">
             <button className=" p-3 px-5 transition duration-300 bg-[#8850f700] rounded-3xl border-[1px] border-[#8750f7] text-[13px] font-medium text-[#8750f7]  hover:bg-[#8750f7] hover:text-[white] ">
               Download CV
             </button>
-            <button className=" relative transition duration-300 transform translate-y-0 hover:translate-y-[-10px] ">
-              <GithubFilled style={{ color: "#8750f7", fontSize: 25 }} />
+            <button className=" relative transition duration-300 transform translate-y-0 hover:translate-y-[-10px] filter drop-shadow-shadow-icon hover:drop-shadow-shadow-icon-from">
+              <GithubFilled
+                style={{ color: "#8750f7", fontSize: 30 }}
+                className=" transition-all duration-300 "
+              />
             </button>
-            <button className=" relative transition duration-300 transform translate-y-0 hover:translate-y-[-10px] ">
-              <LinkedinFilled style={{ color: "#8750f7", fontSize: 25 }} />
+            <button className=" relative transition duration-300 transform translate-y-0 hover:translate-y-[-10px] filter drop-shadow-shadow-icon hover:drop-shadow-shadow-icon-from">
+              <LinkedinFilled
+                style={{ color: "#8750f7", fontSize: 30 }}
+                className=" transition-all duration-300 "
+              />
             </button>
-            <button className=" relative transition duration-300 transform translate-y-0 hover:translate-y-[-10px] ">
-              <InstagramOutlined style={{ color: "#8750f7", fontSize: 25 }} />
+            <button className=" relative transition duration-300 transform translate-y-0 hover:translate-y-[-10px] filter drop-shadow-shadow-icon hover:drop-shadow-shadow-icon-from">
+              <InstagramOutlined
+                style={{ color: "#8750f7", fontSize: 30 }}
+                className=" transition-all duration-300 "
+              />
             </button>
           </div>
 
@@ -70,35 +79,35 @@ export default function Presentation() {
           </p>
         </div>
       </div>
-        <div className="w-full flex flex-row justify-between max-lg:grid grid-cols-2 gap-5 px-3 ">
-          <div className="flex gap-2 items-center justify-center ">
-            <p className="text-[52px] font-semibold">2</p>
-            <p className="text-[15px]">
-              Anos de <br />
-              Experiência
-            </p>
-          </div>
-          <div className="flex gap-2 items-center justify-center ">
-            <p className="text-[52px] font-semibold">10+</p>
-            <p className="text-[15px]">
-              Contribuições <br />
-              Projetos
-            </p>
-          </div>
-          <div className="flex gap-2 items-center justify-center ">
-            <p className="text-[52px] font-semibold">3</p>
-            <p className="text-[15px]">
-              Empresas <br /> contribuidas
-            </p>
-          </div>
-          <div className="flex gap-2 items-center justify-center ">
-            <p className="text-[52px] font-semibold">13</p>
-            <p className="text-[15px]">
-              Repositorios no <br />
-              Github
-            </p>
-          </div>
+      <div className="w-full flex flex-row justify-between max-lg:grid grid-cols-2 gap-5 px-3 ">
+        <div className="flex gap-2 items-center justify-center ">
+          <p className="text-[52px] font-semibold">2</p>
+          <p className="text-[15px]">
+            Anos de <br />
+            Experiência
+          </p>
         </div>
+        <div className="flex gap-2 items-center justify-center ">
+          <p className="text-[52px] font-semibold">10+</p>
+          <p className="text-[15px]">
+            Contribuições <br />
+            Projetos
+          </p>
+        </div>
+        <div className="flex gap-2 items-center justify-center ">
+          <p className="text-[52px] font-semibold">3</p>
+          <p className="text-[15px]">
+            Empresas <br /> contribuidas
+          </p>
+        </div>
+        <div className="flex gap-2 items-center justify-center ">
+          <p className="text-[52px] font-semibold">13</p>
+          <p className="text-[15px]">
+            Repositorios no <br />
+            Github
+          </p>
+        </div>
+      </div>
     </section>
   );
 }

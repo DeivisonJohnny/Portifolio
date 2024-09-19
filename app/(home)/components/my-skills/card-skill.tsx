@@ -12,8 +12,6 @@ type CardSkill = {
 
 export default function CardSkill(props: CardSkill) {
 
-  console.log(props.iconText)
-
   return (
     <Card className="border-none flex items-center justify-center flex-col p-0 gap-[10px] bg-transparent ">
       <CardContent className=" w-[180px] h-[182px]  bg-[#140c1c] grayscale-[90%]  transition-all duration-500 hover:bg-[#2A1454] flex items-center flex-col justify-center  py-[30px] rounded-[10px] px-8 border-[1px] border-[transparent] hover:border-[#8750f7] hover:grayscale-[0%] gap-2 ">
