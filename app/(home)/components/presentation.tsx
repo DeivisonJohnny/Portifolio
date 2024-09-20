@@ -8,7 +8,7 @@ import {
 
 export default function Presentation() {
   return (
-    <section className="  relative transition duration-100 ease-in-out  flex justify-around flex-col px-3 py-10 w-[100%] h-[90vh] max-lg:h-[100%]  2xl:w-[1500px] ">
+    <section className="  relative transition duration-100 ease-in-out  flex justify-around flex-col px-3 py-10 w-[100%] h-[90vh] max-lg:h-[100%]  2xl:w-[1500px] custom-background backdrop-blur-sm  ">
       <div className=" h-[100%] w-[100%] flex items-center justify-between max-lg:flex-col ">
         <div className="flex flex-col  justify-center gap-4 leading-tight w-[50%] h-[100%] px-4 max-lg:w-[100%] ">
           <h1 className="text-3xl font-bold">Eu sou Johnny</h1>
@@ -27,13 +27,13 @@ export default function Presentation() {
               Download CV
             </button>
             <button className=" relative transition duration-300 transform translate-y-0 hover:translate-y-[-10px] filter drop-shadow-shadow-icon hover:drop-shadow-shadow-icon-from">
-              <GithubFilled style={{ color: "#8750f7", fontSize: 25 }} />
+              <GithubFilled style={{ color: "#8750f7", fontSize: 30 }} />
             </button>
             <button className=" relative transition duration-300 transform translate-y-0 hover:translate-y-[-10px] filter drop-shadow-shadow-icon hover:drop-shadow-shadow-icon-from">
-              <LinkedinFilled style={{ color: "#8750f7", fontSize: 25 }} />
+              <LinkedinFilled style={{ color: "#8750f7", fontSize: 30 }} />
             </button>
             <button className=" relative transition duration-300 transform translate-y-0 hover:translate-y-[-10px] filter drop-shadow-shadow-icon hover:drop-shadow-shadow-icon-from">
-              <InstagramOutlined style={{ color: "#8750f7", fontSize: 25 }} />
+              <InstagramOutlined style={{ color: "#8750f7", fontSize: 30 }} />
             </button>
           </div>
         </div>

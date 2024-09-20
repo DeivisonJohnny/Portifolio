@@ -11,7 +11,7 @@ const config: Config = {
   	extend: {
 		dropShadow: {
 			'shadow-icon': '0 0px 0.4px #8850f781',
-			'shadow-icon-from': '0 20px 4px #8850f781',
+			'shadow-icon-from': '0 20px 2.5px #8850f781',
 		},
 		
   		colors: {

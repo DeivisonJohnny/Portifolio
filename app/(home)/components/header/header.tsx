@@ -29,7 +29,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="flex justify-between p-5 w-full 2xl:w-[1500px]">
+    <header className="flex justify-between p-5 w-full 2xl:w-[1500px]  custom-background backdrop-blur-sm ">
       <h1 className="text-2xl font-semibold w-[195px]">
         &lt; Dev Johnny /&gt;
       </h1>
@@ -41,7 +41,7 @@ export default function Header() {
             <NavLink href="#habilidades">Habilidades</NavLink>
             <NavLink href="#contato">Contato</NavLink>
             <NavLink
-              href="#login"
+              href="../login/"
               className="px-6 border-b-0 hover:border-[#00000000] rounded-full bg-gradient-to-r from-[#2E175B] to-[#824DEF]"
             >
               Login
@@ -66,6 +66,9 @@ export default function Header() {
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <a href="">Contato</a>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <NavLink href="../login/">Login</NavLink>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

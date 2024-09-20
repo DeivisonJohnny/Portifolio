@@ -22,7 +22,7 @@ export default function RootLayout({
       <body
       
       style={{backgroundColor: '#0f0715', height: '100%', scrollBehavior: "smooth"}} 
-      className={`${sora.className} dark flex items-center flex-col relative custom-background backdrop-blur-sm overflow-x-hidden scrollSuave`}
+      className={`${sora.className} dark flex items-center flex-col relative overflow-x-hidden scrollSuave`}
             >
         {children}
       </body>
