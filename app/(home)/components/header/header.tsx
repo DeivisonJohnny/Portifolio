@@ -10,6 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { MenuOutlined } from "@ant-design/icons";
+import Link from "next/link";
 
 export default function Header() {
   const [isLargeScreen, setIsLargeScreen] = React.useState(false);
@@ -36,13 +37,13 @@ export default function Header() {
       <div className="flex w-[70%] justify-end gap-6 max-lg:w-fit">
         {isLargeScreen ? (
           <>
-            <NavLink href="#projetos">Projetos</NavLink>
+            <NavLink href="#project">Projetos</NavLink>
             <NavLink href="#experiencia">Experiência</NavLink>
             <NavLink href="#habilidades">Habilidades</NavLink>
             <NavLink href="#contato">Contato</NavLink>
             <NavLink
               href="../login/"
-              className="px-6 border-b-0 hover:border-[#00000000] rounded-full bg-gradient-to-r from-[#2E175B] to-[#824DEF]"
+              className="px-6 border-0 rounded-full hover:border-[#00000000] bg-gradient-to-r from-[#2E175B] to-[#824DEF]"
             >
               Login
             </NavLink>
@@ -56,16 +57,16 @@ export default function Header() {
               <DropdownMenuLabel>Navegue</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem>
-                <a href="">Projeto</a>
+                <Link href="">Projeto</Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <a href="">Experiencia</a>
+                <Link href="">Experiencia</Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <a href="">Habilidades</a>
+                <Link href="">Habilidades</Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <a href="">Contato</a>
+                <Link href="">Contato</Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <NavLink href="../login/">Login</NavLink>

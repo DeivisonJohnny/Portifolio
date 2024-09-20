@@ -2,7 +2,7 @@ import CardJobs from "./card-jobs";
 
 export default function Contributions() {
   return (
-    <section className=" w-[100%] flex items-center flex-col py-[60px] bg-[#0f0715] ">
+    <section className=" w-[100%] flex items-center flex-col py-[60px] bg-[#0f0715] " id="project">
       <article>
         <h1 className=" text-[45px] gradient-text font-bold ">Meu projetos</h1>
         <p >Esses são os meus projetos pessoais</p>
