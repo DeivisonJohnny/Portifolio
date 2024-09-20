@@ -20,13 +20,14 @@ import {
   InstagramOutlined,
   LinkedinFilled,
 } from "@ant-design/icons";
+import Link from "next/link";
 
 const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
+  username: z.string().min(3, {
+    message: "O usuario deve ter ao menos 3 caracteres",
   }),
   password: z.string().min(6, {
-    message: "Password must be at least 6 characters.",
+    message: "A senha deve ter ao menos 6 caracteres",
   }),
 });
 
@@ -52,8 +53,11 @@ export default function Login() {
     <main className=" h-[100vh] flex items-center gap-[50px] justify-center w-[100%] max-w-[1400px] max-md:flex-col ">
       <section className="w-[50%] px-9 max-md:hidden">
         <article className="max-md:hidden flex flex-col gap-4 items-center">
-          <h1 className=" text-[30px] w-[100%] flex items-center gap-4">
-            Olá, Seja bem vindo {nameShow && (<p className=" font-bold gradient-text ">{nameShow} !</p>)}
+          <h1 className=" text-[30px] w-[100%] flex items-center gap-4 flex-wrap ">
+            Olá, Seja bem vindo{" "}
+            {nameShow && (
+              <p className=" font-bold gradient-text ">{nameShow} !</p>
+            )}
           </h1>
           <p className=" w-[100%] ">
             Área de acesso à publicação, administração
@@ -110,9 +114,24 @@ export default function Login() {
           </form>
         </Form>
         <div className=" w-[100%] flex items-center justify-around mt-6 ">
-          <GithubFilled className="text-[30px] transition-all duration-300 transform translate-y-[0%] text-[#8161ff] cursor-pointer drop-shadow-shadow-icon hover:translate-y-[-20%] hover:text-[#af9cff] hover:drop-shadow-shadow-icon-from "></GithubFilled>
-          <LinkedinFilled className="text-[30px] transition-all duration-300 transform translate-y-[0%] text-[#8161ff] cursor-pointer drop-shadow-shadow-icon hover:translate-y-[-20%] hover:text-[#af9cff] hover:drop-shadow-shadow-icon-from "></LinkedinFilled>
-          <InstagramOutlined className="text-[30px] transition-all duration-300 transform translate-y-[0%] text-[#8161ff] cursor-pointer drop-shadow-shadow-icon hover:translate-y-[-20%] hover:text-[#af9cff] hover:drop-shadow-shadow-icon-from "></InstagramOutlined>
+          <Link target="_blank" href="https://instagram.com/deivisonjohnny">
+            <GithubFilled
+              target="_blank"
+              className="text-[30px] transition-all duration-300 transform translate-y-[0%] text-[#8161ff] cursor-pointer drop-shadow-shadow-icon hover:translate-y-[-20%] hover:text-[#af9cff] hover:drop-shadow-shadow-icon-from "
+            ></GithubFilled>
+          </Link>
+          <Link target="_blank" href="https://instagram.com/deivisonjohnny">
+            <LinkedinFilled
+              target="_blank"
+              className="text-[30px] transition-all duration-300 transform translate-y-[0%] text-[#8161ff] cursor-pointer drop-shadow-shadow-icon hover:translate-y-[-20%] hover:text-[#af9cff] hover:drop-shadow-shadow-icon-from "
+            ></LinkedinFilled>
+          </Link>
+          <Link target="_blank" href="https://instagram.com/deivisonjohnny">
+            <InstagramOutlined
+              target="_blank"
+              className="text-[30px] transition-all duration-300 transform translate-y-[0%] text-[#8161ff] cursor-pointer drop-shadow-shadow-icon hover:translate-y-[-20%] hover:text-[#af9cff] hover:drop-shadow-shadow-icon-from "
+            ></InstagramOutlined>
+          </Link>
         </div>
       </section>
     </main>

@@ -29,7 +29,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="flex justify-between p-5 w-full 2xl:w-[1500px]  custom-background backdrop-blur-sm ">
+    <header className="flex justify-between p-5 w-full 2xl:w-[1500px]  custom-background backdrop-blur-sm z-[2] ">
       <h1 className="text-2xl font-semibold w-[195px]">
         &lt; Dev Johnny /&gt;
       </h1>
