@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  /* Theme colors for dark mode */
   .dark {
     --foreground: 210 40% 98%;
     --card: 228 9% 11%;
@@ -26,19 +25,16 @@
     --radius: 0.5rem;
   }
 
-  /* Root variables */
   :root {
-    --tj-theme-primary: #8750f7; /* Substitua pela sua cor primária */
-    --tj-theme-secondary: #2a1454; /* Substitua pela sua cor secundária */
+    --tj-theme-primary: #8750f7;
+    --tj-theme-secondary: #2a1454;
   }
 
-  /* Hover effect for item-list-quality */
   .item-list-quality:hover ~ .icon-list-quality {
     transition: all 400ms;
     transform: rotate(-30%);
   }
 
-  /* Custom background styles */
   .custom-background::before {
     content: "";
     position: absolute;

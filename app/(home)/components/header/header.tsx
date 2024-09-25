@@ -40,7 +40,7 @@ export default function Header() {
             <NavLink href="#project">Projetos</NavLink>
             <NavLink href="#experiencia">Experiência</NavLink>
             <NavLink href="#habilidades">Habilidades</NavLink>
-            <NavLink href="#contato">Contato</NavLink>
+            <NavLink href="../dashboard/">Contato</NavLink>
             <NavLink
               href="../login/"
               className="px-6 border-0 rounded-full hover:border-[#00000000] bg-gradient-to-r from-[#2E175B] to-[#824DEF]"
@@ -66,7 +66,7 @@ export default function Header() {
                 <Link href="">Habilidades</Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Link href="">Contato</Link>
+                <Link href="../dashboard/">Contato</Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <NavLink href="../login/">Login</NavLink>

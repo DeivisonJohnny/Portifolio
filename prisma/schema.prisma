@@ -1,10 +1,15 @@
 datasource db {
-  provider = "postgresql"
   url      = env("DATABASE_URL")
+  provider = "postgresql"
 }
 
-model Users {
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
   id       String @id @default(uuid())
+  name     String
   username String @unique
   password String
 }
@@ -13,6 +18,8 @@ model MyQuality {
   id          String @id @default(uuid())
   title       String
   desctiption String
+  subject     String
+  languages   MySkills[]
 }
 
 model MyProject {
@@ -39,4 +46,6 @@ model MySkills {
   name        String
   myprojectId String
   myproject   MyProject @relation(fields: [myprojectId], references: [id])
+  myqualityId  String
+  myquality MyQuality @relation(fields: [myqualityId], references: [id])
 }
