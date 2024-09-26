@@ -48,7 +48,7 @@ const Dashboard: React.FC = () => {
   return (
     <LayoutMain>
       <Sider trigger={null} collapsible collapsed={collapsed}>
-        <div className="demo-logo-vertical flex items-center justify-center py-3 transition-all duration-300 ">
+        <div className="demo-logo-vertical flex items-center justify-center py-4 transition-all duration-300 mb-1 ">
           <h1 className="gradient-text text-[20px] font-bold ">
             {collapsed ? " DJ" : "< Dev Johnny />"}
           </h1>

@@ -103,8 +103,8 @@
   }
 
   html {
-    scrollbar-width: thin;
-    scrollbar-color: var(--tj-theme-primary) var(--tj-theme-secondary);
+    scrollbar-width: thin !important;
+    scrollbar-color: var(--tj-theme-primary) var(--tj-theme-secondary) !important;
   }
 
   /* Tailwind base styles */
