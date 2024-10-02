@@ -75,7 +75,7 @@ export default function Login() {
           >
             <FormField
               control={form.control}
-              name="username"
+              name="user"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Usuário</FormLabel>

@@ -11,8 +11,9 @@ import {
 } from "@ant-design/icons";
 import { Breadcrumb, Button, Layout, Menu, theme } from "antd";
 import styled from "styled-components";
-import Liguagens from "./liguagens";
 import Studies from "./studies/page";
+import Skills from "./skills/page";
+import TechnicalSkills from "./technical-skills/page";
 
 const { Header, Sider, Content } = Layout;
 
@@ -33,13 +34,13 @@ const Dashboard: React.FC = () => {
       key: "2",
       icon: <TrophyOutlined />,
       label: "Qualidades",
-      content: "AS",
+      content: <Skills></Skills>,
     },
     {
       key: "3",
       icon: <JavaScriptOutlined />,
       label: "Linguagens",
-      content: <Liguagens></Liguagens>,
+      content: <TechnicalSkills />,
     },
   ];
 

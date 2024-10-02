@@ -1,0 +1,90 @@
+.ant-modal .ant-modal-content,
+.ant-modal .ant-modal-header,
+.ant-modal .ant-modal-header .ant-modal-title {
+  background-color: #24282b;
+  color: white;
+}
+
+.ant-modal .ant-modal-content button {
+  color: white;
+}
+
+.ant-modal .ant-modal-content > button:hover {
+  color: white;
+  opacity: 30%;
+}
+
+.ant-modal .ant-modal-content .ant-modal-body .img-crop-control button {
+  color: white;
+  opacity: 100%;
+}
+
+.ant-modal
+  .ant-modal-content
+  .ant-modal-body
+  .img-crop-control
+  .ant-slider-rail {
+  background-color: #383c3f;
+}
+
+.ant-modal
+  .ant-modal-content
+  .ant-modal-body
+  .img-crop-control
+  .ant-slider-track {
+  background-color: #83c3ff;
+  opacity: 100%;
+}
+
+.ant-modal .ant-modal-content .ant-modal-footer .ant-btn:nth-of-type(1) {
+  background-color: #1e2022;
+  color: white;
+  border-color: #1e2022;
+  border-width: 0.5px;
+}
+
+.ant-modal .ant-modal-content .ant-modal-footer .ant-btn:nth-of-type(1):hover {
+  border-color: #83c3ff;
+  opacity: 10%;
+}
+
+.ant-modal .ant-modal-content .ant-modal-footer .ant-btn:nth-of-type(2) {
+  color: white;
+  border-color: #1e2022;
+  border-width: 0.5px;
+}
+
+.ant-modal .ant-modal-content .ant-modal-footer .ant-btn:nth-of-type(2):hover {
+  background-color: #111213;
+  border-color: #5fb1ff;
+  box-shadow: 0px 0px 7px -1.5px #5fb1ff;
+}
+.ant-upload-wrapper .ant-upload-list.ant-upload-list-picture-card {
+  flex-wrap: nowrap !important;
+}
+
+.ant-upload-wrapper
+  .ant-upload-list.ant-upload-list-picture-card
+  .ant-upload-list-item {
+  border-width: 1.5px;
+  border-color: #4d5257;
+}
+
+.ant-upload-select {
+  transition: all 280ms !important;
+  border-color: #6d6d6d !important;
+  color: #6d6d6d;
+  font-size: 40px;
+}
+
+.ant-upload-select:hover {
+  border-color: #1677ff !important;
+  color: #dbdbdb;
+  filter: drop-shadow(0px 0px 2px #1677ffab) !important;
+}
+
+.button-neon:hover {
+  background-color: #111213;
+  border-color: #5fb1ff;
+  box-shadow: 0px 0px 7px -1.7px #5fb1ff;
+}

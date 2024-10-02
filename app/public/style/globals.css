@@ -30,6 +30,16 @@
     --tj-theme-secondary: #2a1454;
   }
 
+  .no-spinner::-webkit-outer-spin-button,
+  .no-spinner::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+  }
+
+  .no-spinner[type="number"] {
+    -moz-appearance: textfield !important;
+  }
+
   .item-list-quality:hover ~ .icon-list-quality {
     transition: all 400ms;
     transform: rotate(-30%);

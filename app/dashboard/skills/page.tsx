@@ -22,7 +22,7 @@ export type StudiesType = {
   university: string;
 };
 
-export default function Studies() {
+export default function Skills() {
   const formSchema = z.object({
     yearTo: z
       .string()
@@ -33,7 +33,7 @@ export default function Studies() {
         message: "O campo deve ter 4 caracteres",
       }),
 
-      yearFrom: z
+    yearFrom: z
       .string()
       .min(4, {
         message: "O campo deve ter ao menos 4 caracteres",
@@ -93,7 +93,7 @@ export default function Studies() {
   return (
     <div className=" w-full h-full rounded-[10px] flex flex-col ">
       <h1 className=" m-[30px] text-[white] text-[20px] font-semibold tracking-[1px] ">
-        Administre seus estudos
+        Skills
       </h1>
 
       <section className=" flex items-center flex-col w-full ">
@@ -164,7 +164,9 @@ export default function Studies() {
                     name="description"
                     render={() => (
                       <FormItem className=" w-[50%] max-lg:w-[100%] ">
-                        <FormLabel className=" text-[white] ">Descrição</FormLabel>
+                        <FormLabel className=" text-[white] ">
+                          Descrição
+                        </FormLabel>
                         <FormControl>
                           <Input
                             placeholder="Descrição"
