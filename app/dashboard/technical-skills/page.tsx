@@ -1,3 +1,5 @@
+"use client";
+
 import "../../public/style/technical-skills.css";
 import {
   Form,
@@ -7,8 +9,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { GetProp, Table, Upload, UploadFile, UploadProps } from "antd";
-import { useEffect, useState } from "react";
+import { Table, Upload, UploadFile, UploadProps } from "antd";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import { z } from "zod";
@@ -19,6 +21,8 @@ import FormItem from "antd/es/form/FormItem";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { DialogTitle } from "@radix-ui/react-dialog";
+import Image from "next/image";
 
 export type TechnicalSkillsType = {
   key?: React.Key;
@@ -27,35 +31,15 @@ export type TechnicalSkillsType = {
   techSkills: string;
 }[];
 
-type FileType = Parameters<GetProp<UploadProps, "beforeUpload">>[0];
-
 export default function TechnicalSkills() {
-  const [fileList, setFileList] = useState<UploadFile[]>([
-    {
-      uid: "-1",
-      name: "image.png",
-      status: "done",
-      url: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
-    },
-  ]);
+  const [fileList, setFileList] = useState<UploadFile[]>([]);
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openModal = () => setIsOpen(true);
 
   const onChange: UploadProps["onChange"] = ({ fileList: newFileList }) => {
     setFileList(newFileList);
-  };
-
-  const onPreview = async (file: UploadFile) => {
-    let src = file.url as string;
-    if (!src) {
-      src = await new Promise((resolve) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file.originFileObj as FileType);
-        reader.onload = () => resolve(reader.result as string);
-      });
-    }
-    const image = new Image();
-    image.src = src;
-    const imgWindow = window.open(src);
-    imgWindow?.document.write(image.outerHTML);
   };
 
   const formSchema = z.object({
@@ -68,17 +52,24 @@ export default function TechnicalSkills() {
       message: "O campo deve ser preenchido",
     }),
   });
-  const form = useForm({
+
+  const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      image: "",
+      acronymSkills: "",
+      techSkills: "",
+    },
     mode: "onChange",
   });
-  const onSubmit = (data: any) => {
-    console.log("🚀 ~ onSubmit ~ data:", data);
-    const payload = {
-      ...data,
+
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
+    const preparePayload = {
+      ...values,
       image: fileList[0]?.url || fileList[0]?.thumbUrl,
     };
-    console.log("🚀 ~ onSubmit ~ payload:", payload);
+
+    console.log("🚀 ~ onSubmit ~ preparePayload:", preparePayload);
   };
 
   const columns = [
@@ -119,13 +110,21 @@ export default function TechnicalSkills() {
       </h1>
       <div className=" h-full flex items-center flex-col ">
         <Dialog>
-          <DialogTrigger className="w-[90%] flex justify-end">
-            <Button className="  flex gap-1 items-center button-neon ">
-              <CirclePlus size={18} />
-              <p>Adicionar</p>
-            </Button>
-          </DialogTrigger>
-          <DialogContent className="flex items-center justify-center py-[50px] px-[30px] backdrop-blur-[3px] ">
+          <div className="w-[90%] flex justify-end">
+            <DialogTrigger className=" w-fit ">
+              <Button className="  flex gap-1 items-center button-neon ">
+                <CirclePlus size={18} />
+                <p>Adicionar</p>
+              </Button>
+            </DialogTrigger>
+          </div>
+          <DialogContent
+            className="flex items-center justify-center py-[50px] px-[30px] backdrop-blur-[3px] flex-col"
+            aria-describedby={undefined}
+          >
+            <DialogTitle className="w-full pb-6 text-[17px] tracking-wide ">
+              Cadastrar Skills
+            </DialogTitle>
             <section className=" w-[100%] flex items-center justify-center gap-4">
               <Form {...form}>
                 <form
@@ -141,12 +140,38 @@ export default function TechnicalSkills() {
                           fileList={fileList}
                           maxCount={1}
                           onChange={onChange}
-                          onPreview={onPreview}
+                          onPreview={() => openModal()}
                         >
                           <UploadIcon size={33} />
                         </Upload>
                       </ImgCrop>
                     </div>
+                    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+                      <DialogContent
+                        aria-describedby={undefined}
+                        className=" flex items-center justify-center flex-col w-[50%] h-[50%] backdrop-blur-[3px] "
+                      >
+                        <DialogTitle>
+                          <h1>
+                            {fileList[0]?.name ? fileList[0]?.name : "Imagem"}
+                          </h1>
+                        </DialogTitle>
+                        {(fileList[0]?.thumbUrl || fileList[0]?.url) && (
+                          <Image
+                            src={
+                              fileList[0]?.thumbUrl ||
+                              fileList[0]?.url ||
+                              undefined ||
+                              ""
+                            }
+                            alt="Imagem upload modal"
+                            width={1000}
+                            height={1000}
+                            className=" w-[90%] h-[90%] rounded-lg "
+                          />
+                        )}
+                      </DialogContent>
+                    </Dialog>
 
                     <FormField
                       control={form.control}
