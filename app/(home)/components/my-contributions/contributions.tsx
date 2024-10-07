@@ -16,7 +16,7 @@ export default function Contributions() {
           ></CardJobs>
             <CardJobs id="sadads"
             titleCard="Meu Portifólio"
-            descriptionCard="Aplicativo Mobile de avaliações de atendimento de uma pousada"
+            descriptionCard="Este portifólio. É um sistema completo de publicação"
             nameImg={"project1.jpg"}
           ></CardJobs>
         </div>

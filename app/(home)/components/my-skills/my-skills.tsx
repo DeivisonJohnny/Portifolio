@@ -5,7 +5,7 @@ export default function MySkills() {
     <section className=" w-[100%] flex flex-col items-center py-[50px] gap-[40px] ">
       <div className=" w-[80%] ">
         <h1 className=" w-[100%] text-center text-[40px] gradient-text font-bold  ">
-          Minhas Habilidades
+          Linguagens e Freamworks
         </h1>
         <p className="text-center">
           Colocamos suas ideias e, portanto, seus desejos na forma de um projeto

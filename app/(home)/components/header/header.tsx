@@ -38,9 +38,10 @@ export default function Header() {
         {isLargeScreen ? (
           <>
             <NavLink href="#project">Projetos</NavLink>
+            <NavLink href="#quality">Qualidades</NavLink>
             <NavLink href="#experiencia">Experiência</NavLink>
             <NavLink href="#habilidades">Habilidades</NavLink>
-            <NavLink href="../dashboard/">Contato</NavLink>
+            <NavLink href="../dashboard/">ADM</NavLink>
             <NavLink
               href="../login/"
               className="px-6 border-0 rounded-full hover:border-[#00000000] bg-gradient-to-r from-[#2E175B] to-[#824DEF]"

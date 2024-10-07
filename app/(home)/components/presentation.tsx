@@ -6,6 +6,7 @@ import {
   LinkedinFilled,
 } from "@ant-design/icons";
 
+
 export default function Presentation() {
   return (
     <section className="  relative transition duration-100 ease-in-out  flex justify-around flex-col px-3 py-10 w-[100%] h-[90vh] max-lg:h-[100%]  2xl:w-[1500px] custom-background backdrop-blur-sm  ">
@@ -17,15 +18,17 @@ export default function Presentation() {
             Mobile
           </h2>
           <p className="leading-normal text-[17px] my-3 max-lg:hidden ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-            amet, architecto necessitatibus ab nisi libero est sed, deserunt
-            mollitia maxime distinctio! A expedita autem fugit veniam odit
-            deserunt quas dolore!
+            Olá, eu sou Deivison Johnny! Sou programador há 2 anos e atualmente
+            trabalho como engenheiro de software na Polícia Civil. Meu foco
+            principal é o desenvolvimento web, mas também tenho experiência com
+            aplicações móveis, utilizando React Native.
           </p>
           <div className=" w-[100%] flex items-center justify-start gap-5 max-lg:hidden">
-            <button className=" p-3 px-5 transition duration-300 bg-[#8850f700] rounded-3xl border-[1px] border-[#8750f7] text-[13px] font-medium text-[#8750f7]  hover:bg-[#8750f7] hover:text-[white] ">
-              Download CV
-            </button>
+            <a href="/upload/curriculum/curriculo.pdf"  download={'curriculo'}>
+              <button className=" p-3 px-5 transition duration-300 bg-[#8850f700] rounded-3xl border-[1px] border-[#8750f7] text-[13px] font-medium text-[#8750f7]  hover:bg-[#8750f7] hover:text-[white] ">
+                Download CV
+              </button>
+            </a>
             <button className=" relative transition duration-300 transform translate-y-0 hover:translate-y-[-10px] filter drop-shadow-shadow-icon hover:drop-shadow-shadow-icon-from">
               <GithubFilled style={{ color: "#8750f7", fontSize: 30 }} />
             </button>
@@ -37,7 +40,10 @@ export default function Presentation() {
             </button>
           </div>
         </div>
-        <div id="scroll" className="  w-[50%] h-[100%] flex items-center justify-center flex-col max-lg:w-[100%] ">
+        <div
+          id="scroll"
+          className="  w-[50%] h-[100%] flex items-center justify-center flex-col max-lg:w-[100%] "
+        >
           <div className="w-[55%] flex items-center justify-center rounded-[21px] relative border-[2px] border-[#2a1454] rounded-custom transition-all duration-300 rotate-[4.5deg] hover:rotate-0 hover:border-[#8750f7] max-lg:w-[40%] m-9">
             <Image
               className="filter grayscale rounded-[20px]"
@@ -72,10 +78,10 @@ export default function Presentation() {
           </div>
 
           <p className=" w-[80%] leading-normal hidden text-[18px] my-[40px] max-lg:flex font-light ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-            amet, architecto necessitatibus ab nisi libero est sed, deserunt
-            mollitia maxime distinctio! A expedita autem fugit veniam odit
-            deserunt quas dolore!
+            Olá, eu sou Deivison Johnny! Sou programador há 2 anos e atualmente
+            trabalho como engenheiro de software na Polícia Civil. Meu foco
+            principal é o desenvolvimento web, mas também tenho experiência com
+            aplicações móveis, utilizando React Native.
           </p>
         </div>
       </div>
@@ -101,7 +107,7 @@ export default function Presentation() {
           </p>
         </div>
         <div className="flex gap-2 items-center justify-center ">
-          <p className="text-[52px] font-semibold">13</p>
+          <p className="text-[52px] font-semibold">5</p>
           <p className="text-[15px]">
             Repositorios no <br />
             Github

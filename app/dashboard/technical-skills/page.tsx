@@ -9,7 +9,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Table, Upload, UploadFile, UploadProps } from "antd";
+import { Avatar, Space, Table, Upload, UploadFile, UploadProps } from "antd";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
@@ -23,6 +23,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { DialogTitle } from "@radix-ui/react-dialog";
 import Image from "next/image";
+import { WarningOutlined } from "@ant-design/icons";
 
 export type TechnicalSkillsType = {
   key?: React.Key;
@@ -72,35 +73,75 @@ export default function TechnicalSkills() {
     console.log("🚀 ~ onSubmit ~ preparePayload:", preparePayload);
   };
 
-  const columns = [
+  const columns: unknown = [
     {
-      title: "Ano de Início",
-      dataIndex: "yearFrom",
-      key: "yearFrom",
+      title: "Logo",
+      dataIndex: "logo",
+      key: "logo",
+      render: (path: string) => (
+        <>
+          <Space wrap size={16}>
+            <Avatar
+              size={50}
+              icon={
+                path ? (
+                  <Image
+                    src={path}
+                    width={200}
+                    height={200}
+                    alt="Logo"
+                    className="w-full h-full"
+                  ></Image>
+                ) : (
+                  <WarningOutlined />
+                )
+              }
+            ></Avatar>
+          </Space>
+        </>
+      ),
+    },
+
+    {
+      title: "Sigla",
+      dataIndex: "acronym",
+      key: "acronym",
     },
     {
-      title: "Ano de Conclusão",
-      dataIndex: "yearTo",
-      key: "yearTo",
+      title: "Linguagem",
+      dataIndex: "techSkills",
+      key: "techSkills",
     },
     {
-      title: "Curso",
-      dataIndex: "course",
-      key: "course",
-    },
-    {
-      title: "Universidade",
-      dataIndex: "university",
-      key: "university",
+      title: "Ações",
+      dataIndex: "actionUpdate",
+      Key: "actionUpdate",
+      render: (_: unknown, id: string) => (
+        <>
+          <div className="flex gap-3 justify-center">
+            <Button
+              key={id}
+              className=" transition-all duration-500 h-fit w-fit px-[5px] py-[1px] rounded-[3px] bg-transparent border-[1.9px] border-dashed border-blue-500 hover:bg-blue-500 "
+            >
+              <p>Alterar</p>
+            </Button>
+            <Button
+              key={id}
+              className=" transition-all duration-500 h-fit w-fit px-[5px] py-[1px] rounded-[3px] bg-transparent border-[1.9px] border-dashed border-[#ff1c2f] hover:bg-[#ff1c2f] "
+            >
+              <p>Deletar</p>
+            </Button>
+          </div>
+        </>
+      ),
     },
   ];
 
-  const dataStudies = Array.from({ length: 100 }).map((_, i) => ({
+  const dataStudies = Array.from({ length: 50 }).map((_, i) => ({
     key: `key-${i}`,
-    yearFrom: 2024,
-    yearTo: 2025,
-    course: "Análise e Desenvolvimento de Sistema",
-    university: "Universidade Cesmac",
+    logo: "/eu.jpg",
+    acronym: "PHP",
+    techSkills: "Hypertext Preprocessor (PHP)",
   }));
 
   return (
@@ -234,7 +275,7 @@ export default function TechnicalSkills() {
             columns={columns}
             dataSource={dataStudies}
             pagination={{ pageSize: 10 }}
-            scroll={{ y: 30 * 15 }}
+            scroll={{ y: 30 * 12 }}
           />
         </section>
       </div>
@@ -250,42 +291,6 @@ const ContainerTable = styled(Table)`
 
   padding: 10px 20px;
 
-  .ant-table-container > .ant-table-body {
-    scrollbar-width: 2px !important;
-  }
-  .ant-table-container {
-    background-color: #17191b;
-    color: white;
-  }
-
-  .ant-table-thead > tr > th {
-    background-color: #17191b;
-    color: white;
-  }
-
-  .ant-table-cell-row-hover {
-    background-color: #3f3f3f84 !important;
-  }
-
-  .ant-table-cell {
-    border-bottom: none !important;
-    font-size: 13px !important;
-    padding: 10px !important;
-  }
-
-  .ant-table-cell:before {
-    display: none;
-  }
-  .ant-table-cell-scrollbar {
-    box-shadow: none !important;
-  }
-
-  .ant-pagination-item-link > span svg {
-    color: white;
-    font-weight: bold;
-    font-size: 16px !important;
-  }
-
   .ant-pagination-item {
     background-color: #242424;
   }
@@ -296,13 +301,5 @@ const ContainerTable = styled(Table)`
 
   .ant-pagination-item-active a {
     color: #1677ff !important;
-  }
-
-  .ant-select,
-  .ant-select-selector {
-    border: none !important;
-    border-radius: 6px;
-    background-color: #242424 !important;
-    color: white;
   }
 `;

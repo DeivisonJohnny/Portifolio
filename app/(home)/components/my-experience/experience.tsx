@@ -8,16 +8,16 @@ export default function MyExperience() {
           Minha Experiencia
         </h1>
         <CardExperience
-          yearInit="2022"
-          yearEnd="2023"
-          title="Jirituba Avaliações"
-          subTitle="Faculdade Cesmac"
+          yearInit="2024"
+          yearEnd="Atuando"
+          title="Policia Civil"
+          subTitle="Estágio"
         ></CardExperience>
         <CardExperience
-          yearInit="2022"
-          yearEnd="2023"
+          yearInit="2023"
+          yearEnd="2024"
           title="Jirituba Avaliações"
-          subTitle="Faculdade Cesmac"
+          subTitle="Aplicativo avaliação para pousada"
         ></CardExperience>
       </div>
       <div className=" w-[50%]  max-lg:w-[100%] flex items-center flex-col gap-6 ">
@@ -25,16 +25,16 @@ export default function MyExperience() {
           Minha Educação
         </h1>
         <CardExperience
-          yearInit="2022"
-          yearEnd="2023"
-          title="Jirituba Avaliações"
-          subTitle="Faculdade Cesmac"
+          yearInit="2021"
+          yearEnd="Cursando"
+          title="Desenvolvimento de Sistema"
+          subTitle="Universidade Cesmac"
         ></CardExperience>
         <CardExperience
-          yearInit="2022"
-          yearEnd="2023"
-          title="Jirituba Avaliações"
-          subTitle="Faculdade Cesmac"
+          yearInit="2021"
+          yearEnd="2022"
+          title="Curso Front - End"
+          subTitle="Cursos Abertos"
         ></CardExperience>
       </div>
     </section>
