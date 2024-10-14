@@ -5,3 +5,36 @@ body {
   padding: 0;
   overflow: hidden;
 }
+
+
+.ant-layout-sider {
+  background-color: #09090b;
+}
+
+.ant-layout {
+  background-color: #3c3c47;
+}
+
+.ant-layout-content {
+  padding: 0px;
+  border-radius: 10px;
+
+  background-color: #17191b !important;
+}
+
+.ant-menu:hover {
+  color: white;
+}
+.ant-menu-item {
+  color: white !important;
+}
+
+.ant-menu-item-selected {
+  background-color: #8750f7;
+  color: #ffffff;
+}
+
+.ant-menu-item-selected:hover {
+  color: white;
+  background-color: #a577ff;
+}

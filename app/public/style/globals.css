@@ -83,8 +83,6 @@
     left: 50%;
   }
 
-  
-
   .scrollSuave {
     scroll-behavior: smooth;
   }
@@ -126,10 +124,18 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    width: 100%;
+    height: 100%;
   }
 
-  .sla {
-    background-color: rgb(255, 28, 47);
+  .fixed {
+    backdrop-filter: blur(1px);
   }
+
+.ant-layout {
+  width: 100vw;
+  min-height: 100vh;
+
 }
-
+  
+}

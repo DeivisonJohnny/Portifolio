@@ -9,7 +9,7 @@ import {
   StockOutlined,
   TrophyOutlined,
 } from "@ant-design/icons";
-import { Breadcrumb, Button, Layout, Menu, theme } from "antd";
+import { Breadcrumb, Button, ConfigProvider, Layout, Menu, theme } from "antd";
 import styled from "styled-components";
 import Studies from "./studies/page";
 import Skills from "./skills/page";
@@ -47,61 +47,64 @@ const Dashboard: React.FC = () => {
   const [pageKey, setPageKey] = useState("1");
 
   return (
-    <LayoutMain>
-      <Sider trigger={null} collapsible collapsed={collapsed}>
-        <div className="demo-logo-vertical flex items-center justify-center py-4 transition-all duration-300 mb-1 ">
-          <h1 className="gradient-text text-[20px] font-bold ">
-            {collapsed ? " DJ" : "< Dev Johnny />"}
-          </h1>
-        </div>
-        <SideMenu
-          theme="dark"
-          mode="inline"
-          defaultSelectedKeys={[`${pageKey}`]}
-          onClick={(event) => {
-            setPageKey(event.key);
-          }}
-          items={listItemMenu}
-        />
-      </Sider>
-      <Layout>
-        <Headerlayout>
-          <ButtonMenu
-            type="text"
-            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-            onClick={() => setCollapsed(!collapsed)}
-            style={{
-              fontSize: "16px",
-              width: 64,
-              height: 64,
-              color: "white",
+    <ConfigProvider
+    >
+      <LayoutMain>
+        <Sider trigger={null} collapsible collapsed={collapsed}>
+          <div className="demo-logo-vertical flex items-center justify-center py-4 transition-all duration-300 mb-1 ">
+            <h1 className="gradient-text text-[20px] font-bold ">
+              {collapsed ? " DJ" : "< Dev Johnny />"}
+            </h1>
+          </div>
+          <SideMenu
+            theme="dark"
+            mode="inline"
+            defaultSelectedKeys={[`${pageKey}`]}
+            onClick={(event) => {
+              setPageKey(event.key);
             }}
+            items={listItemMenu}
           />
+        </Sider>
+        <Layout>
+          <Headerlayout>
+            <ButtonMenu
+              type="text"
+              icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+              onClick={() => setCollapsed(!collapsed)}
+              style={{
+                fontSize: "16px",
+                width: 64,
+                height: 64,
+                color: "white",
+              }}
+            />
 
-          <h1 className="text-[white] text-[18px]  ">Olá, Deivison </h1>
-        </Headerlayout>
-        <BoxBreadcrumb style={{ margin: "16px 0", color: "white" }}>
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item>List</Breadcrumb.Item>
-          <Breadcrumb.Item>App</Breadcrumb.Item>
-        </BoxBreadcrumb>
-        <ContentPage
-          style={{
-            background: colorBgContainer,
-            borderRadius: borderRadiusLG,
-          }}
-        >
-          {listItemMenu[parseInt(pageKey) - 1].content}
-        </ContentPage>
-      </Layout>
-    </LayoutMain>
+            <h1 className="text-[white] text-[18px]  ">Olá, Deivison </h1>
+          </Headerlayout>
+          <BoxBreadcrumb style={{ margin: "16px 0", color: "white" }}>
+            <Breadcrumb.Item>Home</Breadcrumb.Item>
+            <Breadcrumb.Item>List</Breadcrumb.Item>
+            <Breadcrumb.Item>App</Breadcrumb.Item>
+          </BoxBreadcrumb>
+          <ContentPage
+            style={{
+              background: colorBgContainer,
+              borderRadius: borderRadiusLG,
+            }}
+          >
+            {listItemMenu[parseInt(pageKey) - 1].content}
+          </ContentPage>
+        </Layout>
+      </LayoutMain>
+    </ConfigProvider>
   );
 };
 
 const LayoutMain = styled(Layout)`
   width: 100%;
   height: 100vh;
-  background-color: gray; 
+  background-color: gray;
 
   .ant-layout-sider {
     background-color: #09090b;

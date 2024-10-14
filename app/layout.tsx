@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import './public/style/globals.css'
+import "./public/style/globals.css";
+
 
 import { Sora } from "next/font/google";
 

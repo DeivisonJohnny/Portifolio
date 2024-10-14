@@ -1,7 +1,7 @@
 .ant-modal .ant-modal-content,
 .ant-modal .ant-modal-header,
 .ant-modal .ant-modal-header .ant-modal-title {
-  background-color: #24282b;
+  background-color: transparent;
   color: white;
 }
 
@@ -122,9 +122,9 @@
 .ant-table-thead > tr > th {
   background-color: #17191b !important;
   color: white !important;
-  font-size: 16px !important;
+  font-size: 15px !important;
   text-align: center !important;
-  padding: auto 0px !important;
+  padding: 10px !important;
 }
 
 .ant-table {
@@ -168,3 +168,21 @@
   color: white;
 }
 
+
+/* MODAL ANT DESIGN  */
+
+
+.ant-modal-wrap {
+  background-color: #0000009c;
+}
+
+.ant-modal .ant-modal-content , .ant-modal-body, .ant-modal-mask{
+  background-color: transparent;
+}
+
+
+.ant-modal .ant-modal-content {
+  backdrop-filter: blur(1px);
+  border: 1px solid #212427;
+  
+}

@@ -1,4 +1,7 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import {
   Form,
   FormControl,
@@ -8,8 +11,10 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { DialogTrigger } from "@radix-ui/react-dialog";
 import { Table } from "antd";
 import FormItem from "antd/es/form/FormItem";
+import { CirclePlus } from "lucide-react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import { z } from "zod";
@@ -33,7 +38,7 @@ export default function Studies() {
         message: "O campo deve ter 4 caracteres",
       }),
 
-      yearFrom: z
+    yearFrom: z
       .string()
       .min(4, {
         message: "O campo deve ter ao menos 4 caracteres",
@@ -96,108 +101,133 @@ export default function Studies() {
         Administre seus estudos
       </h1>
 
-      <section className=" flex items-center flex-col w-full ">
-        <div className=" w-[90%] ">
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)}>
-              <div className=" flex items-center flex-col max-lg:flex-row gap-5 transition-all duration-300 ">
-                <div className=" w-[100%] flex items-center gap-[15px] max-lg:flex-wrap max-lg:w-[20%] ">
-                  <FormField
-                    control={form.control}
-                    name="yearTo"
-                    render={() => (
-                      <FormItem className=" w-[50%] max-lg:w-[100%] ">
-                        <FormLabel className=" text-[white] ">Inicio</FormLabel>
-                        <FormControl>
-                          <Input
-                            placeholder="Inicio"
-                            type="number"
-                            className=" max-lg:w-[100%] no-spinner  text-[white] "
-                            {...form.register("yearTo")}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
-                    name="yearFrom"
-                    render={() => (
-                      <FormItem className=" w-[50%] max-lg:w-[100%] ">
-                        <FormLabel className=" text-[white] ">Fim</FormLabel>
-                        <FormControl>
-                          <Input
-                            placeholder="Fim"
-                            type="number"
-                            className=" max-lg:w-[100%] no-spinner  text-[white] "
-                            {...form.register("yearFrom")}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <div className="w-[100%] flex items-center gap-[15px] max-lg:flex-col ">
-                  <FormField
-                    control={form.control}
-                    name="course"
-                    render={() => (
-                      <FormItem className=" w-[50%] max-lg:w-[100%] ">
-                        <FormLabel className=" text-[white] ">Curso</FormLabel>
-                        <FormControl>
-                          <Input
-                            placeholder="Curso"
-                            type="text"
-                            className=" max-lg:w-[100%] no-spinner  text-[white] "
-                            {...form.register("course")}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="description"
-                    render={() => (
-                      <FormItem className=" w-[50%] max-lg:w-[100%] ">
-                        <FormLabel className=" text-[white] ">Descrição</FormLabel>
-                        <FormControl>
-                          <Input
-                            placeholder="Descrição"
-                            type="text"
-                            className=" max-lg:w-[100%] no-spinner  text-[white] "
-                            {...form.register("description")}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
+      <div className=" flex flex-col h-full">
+        <section className=" flex items-center flex-col w-full ">
+          <div className=" w-[90%] ">
+            <Dialog>
+              <div className=" w-full flex justify-end ">
+                <DialogTrigger className=" flex gap-1 items-center button-neon bg-[#8161FF] py-[8px] px-[16px] text-[white] rounded-[5px] transition-all duration-300 ">
+                  <CirclePlus size={18} />
+                  <p>Adicionar</p>
+                </DialogTrigger>
               </div>
+              <DialogContent>
+                <DialogTitle className="w-full pb-6 text-[17px] tracking-wide ">
+                  Cadastrar Skills
+                </DialogTitle>
+                <Form {...form}>
+                  <form onSubmit={form.handleSubmit(onSubmit)}>
+                    <div className=" flex items-center flex-col max-lg:flex-row gap-5 transition-all duration-300 ">
+                      <div className=" w-[100%] flex items-center gap-[15px] max-lg:flex-wrap max-lg:w-[20%] ">
+                        <FormField
+                          control={form.control}
+                          name="yearTo"
+                          render={() => (
+                            <FormItem className=" w-[50%] max-lg:w-[100%] ">
+                              <FormLabel className=" text-[white] ">
+                                Inicio
+                              </FormLabel>
+                              <FormControl>
+                                <Input
+                                  placeholder="Inicio"
+                                  type="number"
+                                  className=" max-lg:w-[100%] no-spinner  text-[white] "
+                                  {...form.register("yearTo")}
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
 
-              <div className=" flex items-center justify-center pb-6 px-[10px] relative h-[70px] ">
-                <Button className=" absolute right-0 " type="submit">
-                  Adicionar
-                </Button>
-              </div>
-            </form>
-          </Form>
-        </div>
-      </section>
+                        <FormField
+                          control={form.control}
+                          name="yearFrom"
+                          render={() => (
+                            <FormItem className=" w-[50%] max-lg:w-[100%] ">
+                              <FormLabel className=" text-[white] ">
+                                Fim
+                              </FormLabel>
+                              <FormControl>
+                                <Input
+                                  placeholder="Fim"
+                                  type="number"
+                                  className=" max-lg:w-[100%] no-spinner  text-[white] "
+                                  {...form.register("yearFrom")}
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
+                      <div className="w-[100%] flex items-center gap-[15px] max-lg:flex-col ">
+                        <FormField
+                          control={form.control}
+                          name="course"
+                          render={() => (
+                            <FormItem className=" w-[50%] max-lg:w-[100%] ">
+                              <FormLabel className=" text-[white] ">
+                                Curso
+                              </FormLabel>
+                              <FormControl>
+                                <Input
+                                  placeholder="Curso"
+                                  type="text"
+                                  className=" max-lg:w-[100%] no-spinner  text-[white] "
+                                  {...form.register("course")}
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        <FormField
+                          control={form.control}
+                          name="description"
+                          render={() => (
+                            <FormItem className=" w-[50%] max-lg:w-[100%] ">
+                              <FormLabel className=" text-[white] ">
+                                Descrição
+                              </FormLabel>
+                              <FormControl>
+                                <Input
+                                  placeholder="Descrição"
+                                  type="text"
+                                  className=" max-lg:w-[100%] no-spinner  text-[white] "
+                                  {...form.register("description")}
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
+                    </div>
 
-      <section className=" w-[100%] flex items-center justify-center flex-col">
-        <ContainerTable
-          columns={columns}
-          dataSource={dataStudies}
-          pagination={{ pageSize: 10 }}
-          scroll={{ y: 30 * 6 }}
-        />
-      </section>
+                    <div className=" flex items-center justify-center pb-6 px-[10px] relative h-[70px] ">
+                      <Button className=" absolute right-0 " type="submit">
+                        Adicionar
+                      </Button>
+                    </div>
+                  </form>
+                </Form>
+              </DialogContent>
+            </Dialog>
+          </div>
+        </section>
+        <section className=" w-[100%] flex items-center justify-center flex-col gap-4">
+          <h2 className=" text-left w-[90%] text-[white] text-[16px] tracking-[.05px] ml-2 ">
+            Estudos / Curso
+          </h2>
+          <ContainerTable
+            columns={columns}
+            dataSource={dataStudies}
+            pagination={{ pageSize: 10 }}
+            scroll={{ y: 30 * 12 }}
+          />
+        </section>
+      </div>
     </div>
   );
 }
@@ -210,9 +240,6 @@ const ContainerTable = styled(Table)`
 
   padding: 10px 20px;
 
-  .ant-table-container > .ant-table-body {
-    scrollbar-width: 2px !important;
-  }
   .ant-table-container {
     background-color: #17191b;
     color: white;
@@ -264,5 +291,9 @@ const ContainerTable = styled(Table)`
     border-radius: 6px;
     background-color: #242424 !important;
     color: white;
+  }
+
+  .ant-table-body::-webkit-scrollbar-button {
+    background-color: red !important ;
   }
 `;
